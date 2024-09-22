@@ -8,6 +8,7 @@
 	helper = cache --timeout=3600
 	helper = "oauth"
 
+
 [user]
 	useConfigOnly = true
 
@@ -16,6 +17,3 @@
 
 [includeIf "hasconfig:remote.*.url:https://github.gatech.edu/**"]
 	path = ~/.gitconfig.school
-
-[credential "https://dev.azure.com"]
-	useHttpPath = true
