@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+
+while getopts i:p:g: flag; do
+    case "${flag}" in
+    i) index=${OPTARG} ;;
+    p) parts=${OPTARG} ;;
+    g) gaps=${OPTARG} ;;
+    esac
+done
+
+floating=$(hyprctl activewindow | grep "floating:" | awk '{print $2}')
+pos=$(hyprctl activewindow | grep "at:" | awk '{print $2}')
+size=$(hyprctl activewindow | grep "size:" | awk '{print $2}')
+xpos=$(awk -F',' '{print $1}' <<<$pos)
+width=$(awk -F',' '{print $1}' <<<$size)
+
+if [ $floating = 1 ]; then
+    parts=4
+    gaps=16
+    t_width=$(((5120 - ($parts + 1) * $gaps) / $parts))
+
+    declare -a xpos_arr=(16 16 16 16)
+    for ((i = 0; i < $parts; ++i)); do
+        xpos_arr[$i]=$(($gaps + ($t_width + $gaps) * $i))
+    done
+    t_xpos=${xpos_arr[$index]}
+
+    t_ypos=48
+    t_height=$((1440 - $t_ypos - $gaps))
+
+    if [ $size = "${t_width},${t_height}" ]; then
+        case $xpos in
+        ${xpos_arr[0]})
+            if [ $t_xpos = ${xpos_arr[0]} ]; then
+                t_width=$(($t_width * $parts / 2))
+            fi
+            ;;
+        ${xpos_arr[1]})
+            if [ $t_xpos = ${xpos_arr[1]} ]; then
+                t_width=$(($t_width * $parts / 2))
+            fi
+            ;;
+        ${xpos_arr[2]})
+            if [ $t_xpos = ${xpos_arr[2]} ]; then
+                t_width=$(($t_width * $parts / 2))
+                t_xpos=${xpos_arr[1]}
+            fi
+            ;;
+        ${xpos_arr[3]})
+            if [ $t_xpos = ${xpos_arr[3]} ]; then
+                t_width=$(($t_width * $parts / 2))
+                t_xpos=${xpos_arr[2]}
+            fi
+            ;;
+        esac
+    fi
+
+    hyprctl dispatch resizeactive exact $t_width $t_height && sleep 0.1 &
+    hyprctl dispatch moveactive exact $t_xpos $t_ypos &
+    hyprctl dispatch movecursor $(($t_xpos + ($t_width / 2))) $(($t_ypos + ($t_height / 2))) & 
+    hyprctl dispatch bringactivetotop &
+fi
