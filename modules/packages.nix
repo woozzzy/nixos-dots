@@ -8,7 +8,7 @@
     home-manager nil
 
     # Essentials
-    git vim wget eza tmux git-credential-oauth
+    git vim wget eza tmux git-credential-oauth p7zip
 
     # Devleopment Apps
     vscode.fhs starship wezterm
@@ -29,6 +29,8 @@
     ffmpeg mpv pulseaudio playerctl 
 
     greetd.tuigreet
+
+    whitesur-icon-theme
  ];
 
   fonts.packages = with pkgs; [

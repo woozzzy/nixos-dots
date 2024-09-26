@@ -1,8 +1,9 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   stylix = {
     enable = true;
+
     base16Scheme = { # Gruvbox Dark, Soft https://github.com/dawikur/base16-gruvbox-scheme/tree/master
       base00 = "32302f";
       base01 = "3c3836";
@@ -21,12 +22,15 @@
       base0E = "d3869b";
       base0F = "d65d0e";
     };
+
     image = ../assets/wallpaper.jpg;
     polarity = "dark";
-    opacity.terminal = 0.9;
+    opacity.terminal = 0.85;
+
     cursor.package = pkgs.bibata-cursors;
     cursor.name = "Bibata-Modern-Ice";
     cursor.size = 24;
+
     fonts = {
       monospace = {
         package = pkgs.nerdfonts.override { fonts = [ "Hack" ]; };
@@ -37,8 +41,8 @@
         name = "Montserrat";
       };
       serif = {
-        package = pkgs.montserrat;
-        name = "Montserrat";
+        package = inputs.apple-fonts.packages.${pkgs.system}.sf-pro-nerd;
+        name = "SFProDisplay Nerd Font";
       };
       sizes = {
         applications = 12;

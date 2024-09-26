@@ -41,7 +41,7 @@
   environment.systemPackages = with pkgs; [
     libnotify 
     
-    kitty foot rofi waybar dunst 
+    kitty foot waybar dunst fuzzel
     
     hyprshot grim slurp
 
