@@ -12,7 +12,7 @@
       ../../modules/system/_bundle.nix
       
       ../../modules/desktop/xserver.nix
-      ../../modules/desktop/sddm.nix
+      ../../modules/desktop/greetd.nix
       ../../modules/desktop/hyprland.nix
       inputs.home-manager.nixosModules.default
     ];
