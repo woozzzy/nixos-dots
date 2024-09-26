@@ -17,7 +17,7 @@
     zathura texlive.combined.scheme-full
 
     # Desktop Apps
-    google-chrome obsidian libreoffice-qt6-fresh spotify 
+    google-chrome obsidian libreoffice-qt6-fresh spotify tetrio-desktop
 
     # System monitors
     htop btop nvtopPackages.nvidia neofetch fastfetch showmethekey
