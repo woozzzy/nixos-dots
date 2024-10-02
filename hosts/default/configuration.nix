@@ -10,6 +10,7 @@
       ../../modules/nvidia-driver.nix
 
       ../../modules/system
+      ../../modules/cachix
       
       ../../modules/desktop/xserver.nix
       ../../modules/desktop/greetd.nix

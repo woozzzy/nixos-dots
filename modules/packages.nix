@@ -9,13 +9,13 @@ in {
 
   environment.systemPackages = with pkgs; [
     # NixOS
-    home-manager nil
+    home-manager nil cachix
 
     # Essentials
     git git-lfs vim wget eza tmux git-credential-oauth p7zip jq
 
     # Devleopment Apps
-    vscode.fhs starship wezterm
+    vscode.fhs starship wezterm cudatoolkit
 
     # School
     zathura texlive.combined.scheme-full
