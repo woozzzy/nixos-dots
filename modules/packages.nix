@@ -16,10 +16,10 @@ in {
     git git-lfs vim wget eza tmux git-credential-oauth p7zip jq
 
     # Devleopment Apps
-    vscode.fhs starship wezterm cudatoolkit
+    vscode.fhs starship wezterm cudatoolkit 
 
     # School
-    zathura texlive.combined.scheme-full
+    zathura texlive.combined.scheme-full pandoc
 
     # Desktop Apps
     google-chrome obsidian libreoffice-qt6-fresh spotify discord
