@@ -8,7 +8,7 @@
     home-manager nil
 
     # Essentials
-    git vim wget eza tmux git-credential-oauth p7zip
+    git vim wget eza tmux git-credential-oauth p7zip 
 
     # Devleopment Apps
     vscode.fhs starship wezterm
@@ -19,12 +19,11 @@
     # Desktop Apps
     google-chrome obsidian libreoffice-qt6-fresh spotify discord
 
-
     # System monitors
     htop btop nvtopPackages.nvidia neofetch fastfetch showmethekey
 
     # File systems and management
-    ntfs3g unzip unrar direnv
+    ntfs3g unzip unrar direnv undmg xar
  
     # Audio and Video
     ffmpeg mpv pulseaudio playerctl 
@@ -34,6 +33,8 @@
     whitesur-icon-theme
 
     stalonetray
+
+    nerd-font-patcher
  ];
 
   fonts.packages = with pkgs; [

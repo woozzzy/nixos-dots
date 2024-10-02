@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+floating=$(hyprctl activewindow | grep "floating:" | awk '{print $2}')
+pos=$(hyprctl activewindow | grep "at:" | awk '{print $2}')
+size=$(hyprctl activewindow | grep "size:" | awk '{print $2}')
+xpos=$(awk -F',' '{print $1}' <<<$pos)
+ypos=$(awk -F',' '{print $2}' <<<$pos)
+width=$(awk -F',' '{print $1}' <<<$size)
+height=$(awk -F',' '{print $2}' <<<$size)
+
+if [ $floating = 1 ]; then
+    gaps=16
+    if [ $height -gt 1366 ]; then
+        height=1366
+    fi
+    if [ $width -gt 5088 ]; then
+        width=5088
+    fi
+
+    t_xpos=$(($gaps + 2560 - $width / 2))
+    t_ypos=$(($gaps + 720 - $height / 2))
+
+    hyprctl dispatch resizeactive exact $width $height
+    hyprctl dispatch moveactive exact $t_xpos $t_ypos
+fi
