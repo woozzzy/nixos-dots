@@ -15,6 +15,7 @@
       laa = "ls -lhamuU --total-size";
       lt = "ll -TR --level=2";
       lta = "la --tree --recurse --level=2";
+      ns ="nix-shell --run fish";
     };
   };
 }
