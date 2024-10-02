@@ -12,7 +12,7 @@ in {
     home-manager nil
 
     # Essentials
-    git vim wget eza tmux git-credential-oauth p7zip jq
+    git git-lfs vim wget eza tmux git-credential-oauth p7zip jq
 
     # Devleopment Apps
     vscode.fhs starship wezterm

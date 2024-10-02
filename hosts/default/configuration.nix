@@ -9,7 +9,7 @@
       ../../modules/stylix.nix
       ../../modules/nvidia-driver.nix
 
-      ../../modules/system/_bundle.nix
+      ../../modules/system
       
       ../../modules/desktop/xserver.nix
       ../../modules/desktop/greetd.nix

@@ -3,6 +3,7 @@
     ./audio.nix
     ./bootloader.nix
     ./bluetooth.nix
+    ./cachix.nix
     ./gnome-keyring.nix
     ./gnome-polkit.nix
     ./keyboard.nix
