@@ -38,7 +38,7 @@
       };
       sansSerif = {
         package = pkgs.montserrat;
-        name = "Montserrat";
+        name = "SFProDisplay Nerd Font";
       };
       serif = {
         package = inputs.apple-fonts.packages.${pkgs.system}.sf-pro-nerd;

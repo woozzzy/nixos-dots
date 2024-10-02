@@ -2,6 +2,7 @@
   imports = [
     ./audio.nix
     ./bootloader.nix
+    ./bluetooth.nix
     ./gnome-keyring.nix
     ./gnome-polkit.nix
     ./keyboard.nix

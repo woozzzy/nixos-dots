@@ -17,7 +17,8 @@
     zathura texlive.combined.scheme-full
 
     # Desktop Apps
-    google-chrome obsidian libreoffice-qt6-fresh spotify tetrio-desktop
+    google-chrome obsidian libreoffice-qt6-fresh spotify discord
+
 
     # System monitors
     htop btop nvtopPackages.nvidia neofetch fastfetch showmethekey
@@ -31,6 +32,8 @@
     greetd.tuigreet
 
     whitesur-icon-theme
+
+    stalonetray
  ];
 
   fonts.packages = with pkgs; [
