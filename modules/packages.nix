@@ -1,6 +1,10 @@
 { pkgs, ... }: 
-
-{
+let
+  sf-pro-otf = pkgs.callPackage ../packages/sf-pro-otf.nix { };
+  sf-compact-otf = pkgs.callPackage ../packages/sf-compact-otf.nix { };
+  sf-mono-otf = pkgs.callPackage ../packages/sf-mono-otf.nix { };
+  new-york-otf = pkgs.callPackage ../packages/new-york-otf.nix { };
+in {
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
@@ -8,7 +12,7 @@
     home-manager nil
 
     # Essentials
-    git vim wget eza tmux git-credential-oauth p7zip 
+    git vim wget eza tmux git-credential-oauth p7zip jq
 
     # Devleopment Apps
     vscode.fhs starship wezterm
@@ -44,5 +48,9 @@
     noto-fonts-emoji
     (nerdfonts.override { fonts = [ "Hack" ]; })
     font-awesome
+    sf-pro-otf
+    sf-compact-otf
+    sf-mono-otf
+    new-york-otf
   ];
 }

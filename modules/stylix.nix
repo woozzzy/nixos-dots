@@ -1,6 +1,9 @@
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 
-{
+let
+  sf-pro-otf = pkgs.callPackage ../packages/sf-pro-otf.nix { };
+  new-york-otf = pkgs.callPackage ../packages/new-york-otf.nix { };
+in {
   stylix = {
     enable = true;
 
@@ -37,12 +40,12 @@
         name = "Hack Nerd Font Mono";
       };
       sansSerif = {
-        package = pkgs.montserrat;
-        name = "Montserrat";
+        package = sf-pro-otf;
+        name = "SFProDisplay Nerd Font Propo";
       };
       serif = {
-        package = pkgs.montserrat;
-        name = "Montserrat";
+        package = new-york-otf;
+        name = "NewYork Nerd Font Propo";
       };
       sizes = {
         applications = 12;

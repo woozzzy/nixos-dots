@@ -1,10 +1,10 @@
 { pkgs }:
 
 pkgs.stdenv.mkDerivation {
-  pname = "sf-mono-ttf";
-  version = "1.009";
+  pname = "sf-mono-otf";
+  version = "1.0";
 
-  src = ../../assets/fonts/SF-mono.zip;
+  src = ../assets/fonts/sf-mono-patched.zip;
 
   unpackPhase = ''
     runHook preUnpack
@@ -16,7 +16,7 @@ pkgs.stdenv.mkDerivation {
   installPhase = ''
     runHook preInstall
 
-    install -Dm644 berkeley-mono-patched/*.ttf -t $out/share/fonts/truetype
+    install -Dm644 sf-mono-patched/*.otf -t $out/share/fonts/opentype/
 
     runHook postInstall
   '';
