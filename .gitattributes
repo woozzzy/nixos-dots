@@ -1,5 +1,1 @@
-assets/fonts/new-york-patched.zip filter=lfs diff=lfs merge=lfs -text
-assets/fonts/sf-compact-patched.zip filter=lfs diff=lfs merge=lfs -text
-assets/fonts/sf-mono-patched.zip filter=lfs diff=lfs merge=lfs -text
-assets/fonts/sf-pro-patched.zip filter=lfs diff=lfs merge=lfs -text
 *.zip filter=lfs diff=lfs merge=lfs -text
