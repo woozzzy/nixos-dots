@@ -8,7 +8,7 @@ pkgs.stdenv.mkDerivation {
 
   unpackPhase = ''
     runHook preUnpack
-    ${pkgs.unzip}/bin/unzip $src
+    ${pkgs.p7zip}/bin/7z x $src
 
     runHook postUnpack
   '';
